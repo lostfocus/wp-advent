@@ -98,6 +98,7 @@ class WP_Advent_Plugin_Admin {
 							'terms'    => $category->term_id,
 						),
 					),
+					'posts_per_page'	=>	-1,
 				);
 				$query = new WP_Query( $args );
 				$query->get_posts();
@@ -144,6 +145,7 @@ class WP_Advent_Plugin_Admin {
 					'operator' => 'NOT IN',
 				),
 			),
+			'posts_per_page'	=>	-1,
 		);
 		$no_calender_sheet_query = new WP_Query( $args );
 		$no_calender_sheet_query->get_posts();

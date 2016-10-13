@@ -147,6 +147,7 @@ class WP_Advent_Plugin_Custom {
 					'terms'    => $calendar_metadata->term_id,
 				),
 			),
+			'posts_per_page'	=>	-1,
 		);
 		$query = new WP_Query( $args );
 		$query->get_posts();

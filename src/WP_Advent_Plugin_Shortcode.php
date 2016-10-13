@@ -67,6 +67,7 @@ class WP_Advent_Plugin_Shortcode {
 					'terms'    => $calendar_metadata->term_id,
 				),
 			),
+			'posts_per_page'	=>	-1,
 		);
 		$calQuery = new WP_Query( $args );
 		$calQuery->get_posts();

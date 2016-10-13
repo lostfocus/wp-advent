@@ -110,4 +110,15 @@
 			</div>
 		</div>
 	<?php endif; ?>
+	<?php if($no_calender_sheet_query->post_count > 0): ?>
+	<h3><?php _e('Sheets that somehow got lost',$plugin_name); ?></h3>
+	<?php
+	while ( $no_calender_sheet_query->have_posts() ) {
+		$no_calender_sheet_query->the_post();
+		echo '<li><a href="' . get_edit_post_link(get_the_ID()) . '">' . get_the_title(  );
+		echo '</a>';
+		echo '</li>';
+	}
+	?>
+	<?php endif; ?>
 </div>

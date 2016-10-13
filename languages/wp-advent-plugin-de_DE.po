@@ -1,18 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Advent Plugin\n"
-"POT-Creation-Date: 2014-11-14 12:22+0100\n"
-"PO-Revision-Date: 2014-11-14 12:23+0100\n"
+"POT-Creation-Date: 2015-11-03 15:50+0100\n"
+"PO-Revision-Date: 2015-11-03 15:50+0100\n"
 "Last-Translator: Dominik Schwind <dschwind@lostfocus.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_x:1,2c;_e\n"
+"X-Poedit-KeywordsList: __;_x:1,2c;_e;_x\n"
 "X-Poedit-SearchPath-0: ../src\n"
 "X-Poedit-SearchPath-1: ../tpl\n"
 
@@ -90,7 +90,7 @@ msgctxt "taxonomy general name"
 msgid "Calendars"
 msgstr "Adventskalender"
 
-#: ../src/WP_Advent_Plugin_Custom.php:54
+#: ../src/WP_Advent_Plugin_Custom.php:54 ../src/WP_Advent_Plugin_Custom.php:116
 msgctxt "taxonomy singular name"
 msgid "Calendar"
 msgstr "Kalender"
@@ -151,6 +151,22 @@ msgstr "Kalender hinzufügen oder entfernen"
 msgid "No calendars found."
 msgstr "Keine Kalender gefunden"
 
+#: ../src/WP_Advent_Plugin_Custom.php:108
+msgid "Add to Calendar"
+msgstr "Zu Kalender hinzufügen"
+
+#: ../src/WP_Advent_Plugin_Custom.php:178
+msgid ""
+"We could not find a calendar for this sheet. Try to change the date of this "
+"post to the day you want the sheet to appear."
+msgstr ""
+"Es konnte kein passender Kalender gefunden werden. Versuche, das Datum "
+"dieses Eintrags auf den Tag zu ändern, an dem er im Kalender erscheinen soll."
+
+#: ../src/WP_Advent_Plugin_Custom.php:226
+msgid "None of these calendars"
+msgstr "Keiner dieser Kalender"
+
 #: ../tpl/management_page.php:11
 msgid "Year:"
 msgstr "Jahr:"
@@ -167,10 +183,18 @@ msgstr "Shortcode"
 msgid "Manage calendar"
 msgstr "Kalender verwalten"
 
-#: ../tpl/management_page.php:70
+#: ../tpl/management_page.php:74
 msgid "Calendar cover image"
 msgstr "Kalenderbild"
 
-#: ../tpl/management_page.php:79 ../tpl/management_page.php:88
+#: ../tpl/management_page.php:83 ../tpl/management_page.php:92
 msgid "Choose other image"
 msgstr "Bild auswählen"
+
+#: ../tpl/management_page.php:114
+msgid "Sheets that somehow got lost"
+msgstr "Kalenderblätter, die verloren gegangen sind"
+
+#: ../tpl/meta_box_repair.php:23
+msgid "Add to this calendar"
+msgstr "Zu diesem Kalender hinzufügen"

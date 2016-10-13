@@ -74,6 +74,7 @@ class WP_Advent_Plugin {
 		require_once plugin_dir_path( dirname( __FILE__ ) ).'src/WP_Advent_Plugin_i18n.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ).'src/WP_Advent_Plugin_Calendar.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ).'src/WP_Advent_Plugin_Calendar_Admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ).'src/WP_Advent_Plugin_Calendar_Collection.php';
 		$this->loader = new WP_Advent_Plugin_Loader();
 	}
 	protected function _set_locale(){
@@ -98,5 +99,6 @@ class WP_Advent_Plugin {
 		$this->loader->add_action( 'init', $plugin_custom, 'init' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_custom, 'enqueue_scripts' );
 		$this->loader->add_action( 'add_meta_boxes', $plugin_custom, 'add_meta_box',10,2 );
+		$this->loader->add_action( 'save_post', $plugin_custom, 'wp_advent_save_repair_meta_box_content' );
 	}
 }

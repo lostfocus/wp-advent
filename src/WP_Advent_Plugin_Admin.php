@@ -122,50 +122,32 @@ class WP_Advent_Plugin_Admin {
 			}
 		}
 
-		$calendar_metadatas = get_categories(array('taxonomy' => 'wp_advent_plugin_calendar','hide_empty' => 0));
+		$calendar_collection = WP_Advent_Plugin_Calendar_Collection::getInstance();
+		$calendar_collection->setPlugin($this->plugin);
 
-		usort($calendar_metadatas,array($this,'_sortCalendars'));
 
-		$calendar_images = $this->plugin->getOption('calendar_images');
-		if(!$calendar_images){
-			$calendar_images = array();
-		}
-
-		$calendars = array();
-		foreach($calendar_metadatas as $calendar_metadata){
-			$calendar = new WP_Advent_Plugin_Calendar_Admin();
-			$calendar->setId($calendar_metadata->term_id);
-			$calendar->setYear($calendar_metadata->description);
-			$calendar->setName($calendar_metadata->name);
-			$calendar->setSlug($calendar_metadata->slug);
-			if(isset($calendar_images[$calendar->getId()])){
-				// $image = wp_get_attachment_metadata($calendar_images[$calendar->getId()]);
-				$image = $calendar_images[$calendar->getId()];
-				$calendar->setImage($image);
-			}
-			$args = array(
-				'post_type'	=>	'wp_advent_sheet',
-				'year'	=>	(int)$calendar_metadata->description,
-				'tax_query' => array(
-					array(
-						'taxonomy' => 'wp_advent_plugin_calendar',
-						'field'    => 'term_id',
-						'terms'    => $calendar_metadata->term_id,
-					),
-				),
-			);
-			$query = new WP_Query( $args );
-			$query->get_posts();
-			if($query->post_count > 0){
-				foreach($query->posts as $post){
-					$calendar->addPost($post);
-				}
-			}
-			$calendars[] = $calendar;
-		}
+		$calendar_ids = $calendar_collection->getCalendarIds();
+		$calendars = $calendar_collection->getCalendars();
 
 		$taxonomy = get_taxonomy('wp_advent_plugin_calendar');
 		$plugin_name = $this->plugin_name;
+
+		$args = array(
+			'post_type'	=>	'wp_advent_sheet',
+			'orderby' => 'post_date',
+			'order'   => 'ASC',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'wp_advent_plugin_calendar',
+					'field'    => 'term_id',
+					'terms'    => $calendar_ids,
+					'operator' => 'NOT IN',
+				),
+			),
+		);
+		$no_calender_sheet_query = new WP_Query( $args );
+		$no_calender_sheet_query->get_posts();
+
 		require_once plugin_dir_path( dirname( __FILE__ ) ).'tpl/management_page.php';
 	}
 

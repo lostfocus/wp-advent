@@ -30,11 +30,11 @@
 	padding: 15px;
 	text-align: center
 }
-#wp_advent_meta_box .wp-advent-admin-calendar {
+#wp_advent_meta_box .wp-advent-admin-calendar, #wp_advent_repair_meta_box .wp-advent-admin-calendar {
     width: 100%;
 }
 
-#wp_advent_meta_box .wp-advent-admin-calendar td {
+#wp_advent_meta_box .wp-advent-admin-calendar td, #wp_advent_repair_meta_box .wp-advent-admin-calendar td {
     padding: 10px 5px;
 }
 .sheet {

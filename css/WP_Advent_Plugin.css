@@ -1,0 +1,63 @@
+/**
+CSS goes here
+*/
+
+#wp-advent-wrapper {
+    position: relative;
+    box-sizing: border-box;
+}
+
+#wp-advent-list {
+    background-position: center center;
+    background-size: cover;
+    margin: 0 auto;
+    max-width: 99.96%;
+    padding: 0;
+    width: 99.96%;
+}
+
+#wp-advent-list li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 16.66%;
+}
+
+#wp-advent-list li a,
+#wp-advent-list li span {
+    color: #fff;
+    display: block;
+    font-size: 1.3em;
+    padding: 2em 0;
+    height: 100%;
+    line-height: 3em;
+    text-decoration: none;
+    text-align: center;
+
+    -webkit-transition: all 0.3s linear; /* Firefox */
+    -moz-transition: all 0.3s linear; /* WebKit */
+    -o-transition: all 0.3s linear; /* Opera */
+    transition: all 0.3s linear; /* Standard */
+}
+
+#wp-advent-list li span {
+    background: rgba(255, 255, 255, .9);
+}
+
+#wp-advent-list a:hover {
+    background: rgba(255, 255, 255, .5);
+}
+
+#wp-advent-list a:active {
+    top: 0;
+}
+
+.wp-advent-cf:after {
+    content: ".";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+}

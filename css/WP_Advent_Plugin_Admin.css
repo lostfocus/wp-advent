@@ -1,0 +1,44 @@
+.jsonly {
+    display: none;
+}
+
+.wp-advent-imagepreview {
+	max-width: 500px;
+}
+
+#poststuff h3 {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.wp-advent-admin-floater-left {
+	float: left;
+	min-width: 500px;
+	width: 49%;
+}
+
+.wp-advent-shortcode-output {
+	width: 75%;
+}
+
+.wp-advent-admin-floater-right {
+	float: right;
+	min-width: 500px;
+	width: 49%;
+}
+
+.wp-advent-admin-calendar td {
+	padding: 15px;
+	text-align: center
+}
+
+.sheet {
+    background-color: #adff2e;
+}
+
+.empty {
+    background-color: rgba(255, 69, 1, 0.52);
+}
+
+.wp-advent-delete-form p {
+	margin: 0;
+}

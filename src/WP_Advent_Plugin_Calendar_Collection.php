@@ -102,6 +102,11 @@ class WP_Advent_Plugin_Calendar_Collection {
 				$calendar->setImage($image);
 			}
 
+			if(function_exists('get_term_meta')){
+				$calendar_order = get_term_meta($calendar_metadata->term_id,'calendar_order',true);
+				$calendar->setOrder($calendar_order);
+			}
+
 			if(!isset($this->check_array[(int)$calendar_metadata->description])){
 				$this->check_array[(int)$calendar_metadata->description] = array();
 			}

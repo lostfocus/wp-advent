@@ -7,6 +7,30 @@ class WP_Advent_Plugin_Calendar {
 	protected $slug;
 
 	protected $days = array();
+	protected $order = array();
+
+	public function __construct()
+	{
+		for($i = 1; $i <= 24; $i++){
+			$this->order[] = $i;
+		}
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getOrder()
+	{
+		return $this->order;
+	}
+
+	/**
+	 * @param array $order
+	 */
+	public function setOrder($order)
+	{
+		$this->order = $order;
+	}
 
 	/**
 	 * @return mixed

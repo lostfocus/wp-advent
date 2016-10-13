@@ -1,6 +1,6 @@
 /**
-CSS goes here
-*/
+ * WP-Advent: Frontend-CSS
+ */
 
 #wp-advent-wrapper {
     position: relative;
@@ -27,6 +27,7 @@ CSS goes here
 
 #wp-advent-list li a,
 #wp-advent-list li span {
+    border: 0;
     color: #fff;
     display: block;
     font-size: 1.3em;
@@ -42,17 +43,11 @@ CSS goes here
     transition: all 0.3s linear; /* Standard */
 }
 
-#wp-advent-list li span {
-    background: rgba(255, 255, 255, .9);
-}
+#wp-advent-list li span { background: rgba(255, 255, 255, .9); }
 
-#wp-advent-list a:hover {
-    background: rgba(255, 255, 255, .5);
-}
+#wp-advent-list a:hover { background: rgba(255, 255, 255, .5); }
 
-#wp-advent-list a:active {
-    top: 0;
-}
+#wp-advent-list a:active { top: 0; }
 
 .wp-advent-cf:after {
     content: ".";

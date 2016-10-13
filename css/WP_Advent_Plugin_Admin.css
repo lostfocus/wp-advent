@@ -1,50 +1,50 @@
-.jsonly {
-    display: none;
+/**
+ * WP-Advent: Admin-CSS
+ */
+
+.jsonly { display: none; }
+
+.calendar-add-floater {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
 }
 
-.wp-advent-imagepreview {
-	max-width: 500px;
+.calendar-add-floater p {
+    margin: 0;
+    padding: 0;
 }
 
-#poststuff h3 {
-	border-bottom: 1px solid #e5e5e5;
-}
+.all-calendars-headline { margin: 50px 0 0 0;}
 
-.wp-advent-admin-floater-left {
-	float: left;
-	min-width: 500px;
-	width: 49%;
-}
+.wp-advent-imagepreview { max-width: 500px; }
 
-.wp-advent-shortcode-output {
-	width: 75%;
-}
+.wp-advent-admin-calendar { width: 100%; }
 
-.wp-advent-admin-floater-right {
-	float: right;
-	min-width: 500px;
-	width: 49%;
-}
-
-.wp-advent-admin-calendar td {
-	padding: 15px;
-	text-align: center
-}
-#wp_advent_meta_box .wp-advent-admin-calendar, #wp_advent_repair_meta_box .wp-advent-admin-calendar {
-    width: 100%;
-}
-
-#wp_advent_meta_box .wp-advent-admin-calendar td, #wp_advent_repair_meta_box .wp-advent-admin-calendar td {
+.sheet a,
+.empty a,
+.sheet span,
+.empty span {
+    color: black;
+    display: block;
     padding: 10px 5px;
-}
-.sheet {
-    background-color: #adff2e;
-}
-
-.empty {
-    background-color: rgba(255, 69, 1, 0.52);
+    text-align: center;
+    text-decoration: none;
 }
 
-.wp-advent-delete-form p {
-	margin: 0;
+.sheet a:hover,
+.empty a:hover {
+    background: #cccccc;
+}
+
+.sheet a { background-color: #adff2e; }
+
+.empty a { background-color: rgba(255, 69, 1, 0.52); }
+
+.wp-advent-delete-form p { margin: 0; }
+
+/* Overriding Styles for WP 4.3 */
+.wp-advent-admin-wrapper .postbox h2 {
+    font-size: 14px;
+    margin-left: 12px;
 }

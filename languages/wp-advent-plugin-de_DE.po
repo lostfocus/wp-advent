@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Advent Plugin\n"
-"POT-Creation-Date: 2015-11-03 15:50+0100\n"
-"PO-Revision-Date: 2015-11-03 15:50+0100\n"
+"POT-Creation-Date: 2015-11-17 09:18+0100\n"
+"PO-Revision-Date: 2015-11-17 09:19+0100\n"
 "Last-Translator: Dominik Schwind <dschwind@lostfocus.de>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -155,7 +155,8 @@ msgstr "Keine Kalender gefunden"
 msgid "Add to Calendar"
 msgstr "Zu Kalender hinzufügen"
 
-#: ../src/WP_Advent_Plugin_Custom.php:178
+#: ../src/WP_Advent_Plugin_Custom.php:179
+#: ../src/WP_Advent_Plugin_Custom.php:212
 msgid ""
 "We could not find a calendar for this sheet. Try to change the date of this "
 "post to the day you want the sheet to appear."
@@ -163,7 +164,7 @@ msgstr ""
 "Es konnte kein passender Kalender gefunden werden. Versuche, das Datum "
 "dieses Eintrags auf den Tag zu ändern, an dem er im Kalender erscheinen soll."
 
-#: ../src/WP_Advent_Plugin_Custom.php:226
+#: ../src/WP_Advent_Plugin_Custom.php:227
 msgid "None of these calendars"
 msgstr "Keiner dieser Kalender"
 
@@ -171,30 +172,33 @@ msgstr "Keiner dieser Kalender"
 msgid "Year:"
 msgstr "Jahr:"
 
-#: ../tpl/management_page.php:36
-msgid "Click to switch"
-msgstr "Zum Umschalten klicken"
-
-#: ../tpl/management_page.php:45
+#: ../tpl/management_page.php:43
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: ../tpl/management_page.php:51
-msgid "Manage calendar"
-msgstr "Kalender verwalten"
-
-#: ../tpl/management_page.php:74
+#: ../tpl/management_page.php:52
 msgid "Calendar cover image"
 msgstr "Kalenderbild"
 
-#: ../tpl/management_page.php:83 ../tpl/management_page.php:92
+#: ../tpl/management_page.php:63
 msgid "Choose other image"
 msgstr "Bild auswählen"
 
-#: ../tpl/management_page.php:114
+#: ../tpl/management_page.php:76
+msgid "Manage calendar"
+msgstr "Kalender verwalten"
+
+#: ../tpl/management_page.php:109
+msgid "Randomize days"
+msgstr "Zufällige Anordnung"
+
+#: ../tpl/management_page.php:130
 msgid "Sheets that somehow got lost"
 msgstr "Kalenderblätter, die verloren gegangen sind"
 
 #: ../tpl/meta_box_repair.php:23
 msgid "Add to this calendar"
 msgstr "Zu diesem Kalender hinzufügen"
+
+#~ msgid "Click to switch"
+#~ msgstr "Zum Umschalten klicken"

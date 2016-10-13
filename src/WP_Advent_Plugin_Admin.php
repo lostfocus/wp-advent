@@ -59,6 +59,22 @@ class WP_Advent_Plugin_Admin {
 			unset($calendar_data);
 		}
 
+		if(isset($_POST['submit']) && isset($_POST['ap_form']) && ($_POST['ap_form'] == 'randomize')){
+			check_admin_referer( 'randomize_wp_advent_plugin_calendar' );
+			if(function_exists('update_term_meta')){
+				$category = get_term($_POST['calendar'],'wp_advent_plugin_calendar');
+				$calendar_order = get_term_meta($category->term_id,'calendar_order',true);
+				if(is_string($calendar_order) && (trim($calendar_order) == "")){
+					$calendar_order = array();
+					for($i = 1; $i <= 24; $i++){
+						$calendar_order[] = $i;
+					}
+				}
+				shuffle($calendar_order);
+				update_term_meta($category->term_id,'calendar_order',$calendar_order);
+			}
+		}
+
 		if(isset($_POST['submit']) && isset($_POST['ap_form']) && ($_POST['ap_form'] == 'delete')){
 			check_admin_referer( 'delete_wp_advent_plugin_calendar' );
 			$category = get_term($_POST['calendar'],'wp_advent_plugin_calendar');

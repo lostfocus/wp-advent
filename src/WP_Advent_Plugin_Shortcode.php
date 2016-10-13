@@ -51,6 +51,12 @@ class WP_Advent_Plugin_Shortcode {
 		$calendar->setYear($calendar_metadata->description);
 		$calendar->setName($calendar_metadata->name);
 		$calendar->setSlug($calendar_metadata->slug);
+
+		if(function_exists('get_term_meta')){
+			$calendar_order = get_term_meta($calendar_metadata->term_id,'calendar_order',true);
+			$calendar->setOrder($calendar_order);
+		}
+
 		if(isset($calendar_images[$calendar->getId()])){
 			$image = $calendar_images[$calendar->getId()];
 			$calendar->setImage($image);
@@ -69,6 +75,9 @@ class WP_Advent_Plugin_Shortcode {
 			),
 			'posts_per_page'	=>	-1,
 		);
+		if(is_preview()){
+			array_push($args['post_status'],'future');
+		}
 		$calQuery = new WP_Query( $args );
 		$calQuery->get_posts();
 		if($calQuery->post_count > 0){

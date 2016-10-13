@@ -29,7 +29,9 @@ class WP_Advent_Plugin_Calendar {
 	 */
 	public function setOrder($order)
 	{
-		$this->order = $order;
+		if(is_array($order)){
+			$this->order = $order;
+		}
 	}
 
 	/**

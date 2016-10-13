@@ -1,8 +1,8 @@
-=== WP Advent Plugin ===
+=== WP Advent ===
 Contributors: schneyra, dominik.schwind
 Tags: christmas, december
 Requires at least: 4
-Tested up to: 4.1
+Tested up to: 4.3
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,9 @@ Multiple calendars and calendar years are supported.
 1. Backend
 
 == Changelog ==
+= 1.1 =
+Cleaned up the interface.
+
 = 1.0 =
 Renamed to WP Advent
 

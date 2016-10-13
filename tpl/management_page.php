@@ -57,7 +57,11 @@
 													$daydate = $i * 6 + $j; ?>
 													<?php $day = $calendar->getDay($daydate); ?>
 													<td class="<?php echo ($day) ? 'sheet' : 'empty'; ?>">
-														<a href="<?php echo admin_url('tools.php?page=wp_advent_plugin&noheader=true&action=addsheet&calendar='.$calendar->getId().'&day='.$daydate); ?>"><?php echo $daydate; ?></a>
+														<?php if($day): ?>
+															<a href="<?php echo get_edit_post_link($day->ID); ?>"><?php echo $daydate; ?></a>
+														<?php else: ?>
+															<a href="<?php echo admin_url('tools.php?page=wp_advent_plugin&noheader=true&action=addsheet&calendar='.$calendar->getId().'&day='.$daydate); ?>"><?php echo $daydate; ?></a>
+														<?php endif; ?>
 													</td>
 												<?php endfor; ?>
 											</tr>

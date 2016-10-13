@@ -85,4 +85,66 @@ class WP_Advent_Plugin_Custom {
 
 		$wp_rewrite->flush_rules( false );
 	}
-} 
+
+	public function enqueue_scripts(){
+		if(get_post_type() == 'wp_advent_sheet'){
+			?>
+			<style type="text/css">
+				a.page-title-action {
+					display: none;
+				}
+			</style>
+			<?php
+		}
+	}
+
+	public function add_meta_box($post_type,$post)
+	{
+		if($post_type != "wp_advent_sheet") return;
+		$calendar = wp_get_object_terms($post->ID,'wp_advent_plugin_calendar');
+		if(!$calendar || is_wp_error($calendar) || (count($calendar) < 1)) return;
+		add_meta_box(
+			'wp_advent_meta_box',
+			_x( 'Calendar', 'taxonomy singular name', $this->plugin_name ),
+			array( $this, 'render_meta_box_content' ),
+			$post_type,
+			'side'
+		);
+	}
+
+	public function render_meta_box_content($post){
+		$calendar_metadata = wp_get_object_terms($post->ID,'wp_advent_plugin_calendar');
+		if(!$calendar_metadata || is_wp_error($calendar_metadata) || (count($calendar_metadata) < 1)) return;
+		$calendar_metadata = $calendar_metadata[0];
+		$calendar = new WP_Advent_Plugin_Calendar_Admin();
+		$calendar->setId($calendar_metadata->term_id);
+		$calendar->setYear($calendar_metadata->description);
+		$calendar->setName($calendar_metadata->name);
+		$calendar->setSlug($calendar_metadata->slug);
+		if(isset($calendar_images[$calendar->getId()])){
+			// $image = wp_get_attachment_metadata($calendar_images[$calendar->getId()]);
+			$image = $calendar_images[$calendar->getId()];
+			$calendar->setImage($image);
+		}
+		$args = array(
+			'post_type'	=>	'wp_advent_sheet',
+			'year'	=>	(int)$calendar_metadata->description,
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'wp_advent_plugin_calendar',
+					'field'    => 'term_id',
+					'terms'    => $calendar_metadata->term_id,
+				),
+			),
+		);
+		$query = new WP_Query( $args );
+		$query->get_posts();
+		if($query->post_count > 0){
+			foreach($query->posts as $sheet){
+				$calendar->addPost($sheet);
+			}
+		}
+		require_once plugin_dir_path( dirname( __FILE__ ) ).'tpl/meta_box.php';
+
+	}
+}

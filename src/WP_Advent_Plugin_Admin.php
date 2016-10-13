@@ -116,7 +116,7 @@ class WP_Advent_Plugin_Admin {
 					$post_id = wp_insert_post($post);
 
 					wp_set_post_terms( $post_id, array( (int)$category->term_id), 'wp_advent_plugin_calendar' );
-					$url = admin_url('post.php?post='.$post_id.'&action=edit');
+					$url = get_edit_post_link($post_id,'edit');
 					wp_redirect($url);
 				}
 			}

@@ -8,7 +8,7 @@ class WP_Advent_Plugin {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-advent-plugin';
-		$this->version = '0.1';
+		$this->version = '1.1';
 
 		$this->options = get_option($this->plugin_name);
 
@@ -96,5 +96,7 @@ class WP_Advent_Plugin {
 	protected function _define_custom_types(){
 		$plugin_custom = new WP_Advent_Plugin_Custom ( $this->plugin_name, $this->version, $this );
 		$this->loader->add_action( 'init', $plugin_custom, 'init' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_custom, 'enqueue_scripts' );
+		$this->loader->add_action( 'add_meta_boxes', $plugin_custom, 'add_meta_box',10,2 );
 	}
 }

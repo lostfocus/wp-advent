@@ -75,6 +75,10 @@ class WP_Advent_Plugin_Shortcode {
 				$calendar->addPost($post);
 			}
 		}
+		ob_start();
 		require plugin_dir_path( dirname( __FILE__ ) ).'tpl/shortcode.php';
+		$content = ob_get_contents();
+		ob_end_clean();
+		return $content;
 	}
 }

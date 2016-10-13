@@ -2,8 +2,8 @@
 Contributors: schneyra, dominik.schwind
 Tags: christmas, december
 Requires at least: 4
-Tested up to: 4.3
-Stable tag: 1.1.2
+Tested up to: 4.4
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,10 @@ Multiple calendars and calendar years are supported.
 1. Backend
 
 == Changelog ==
+= 1.2 =
+The plugin is now ready for WordPress 4.4.
+And once your WordPress is updated, you'll be able to shuffle the calendars to make them a little bit more exciting.
+
 = 1.1.2 =
 Apparently there were two bugs that made it look like sheets were "lost." This update should fix the second bug, too.
 

@@ -20,6 +20,6 @@
 <p class="meta-options">
 	<label for="this_calendar_<?php echo $calendar->getId(); ?>" class="selectit">
 		<input name="repair_add_to_calendar" type="radio" id="this_calendar_<?php echo $calendar->getId(); ?>" value="<?php echo $calendar->getId(); ?>">
-		<?php _e('Add to this calendar',$this->plugin_name); ?>
+		<?php _e('Add to this calendar','wp-advent'); ?>
 	</label>
 </p>

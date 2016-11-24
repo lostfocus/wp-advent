@@ -14,8 +14,8 @@ class WP_Advent_Plugin_Admin {
 
 	public function menues(){
 		add_management_page(
-			__('Advent Calendar',$this->plugin_name),
-			__('Advent Calendar',$this->plugin_name),
+			__('Advent Calendar','wp-advent'),
+			__('Advent Calendar','wp-advent'),
 			'edit_posts',
 			'wp_advent_plugin',
 			array($this, 'management_page')
@@ -27,8 +27,8 @@ class WP_Advent_Plugin_Admin {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( dirname( __FILE__ )) . 'js/WP_Advent_Plugin_Admin.js', array( 'jquery' ), $this->version, false );
 
 		$translation_array = array(
-			'are_you_sure'	=>	__('Are you sure?',$this->plugin_name),
-			'choose_image'	=>	__('Choose Image',$this->plugin_name)
+			'are_you_sure'	=>	__('Are you sure?','wp-advent'),
+			'choose_image'	=>	__('Choose Image','wp-advent')
 		);
 		wp_localize_script( $this->plugin_name, 'wpadventplugin', $translation_array );
 

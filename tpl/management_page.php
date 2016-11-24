@@ -40,7 +40,7 @@
 
 						<div class="meta-box-sortables ui-sortable">
 							<div class="postbox">
-								<h2><span><?php _e("Shortcode",$plugin_name); ?></span></h2>
+								<h2><span><?php _e("Shortcode",'wp-advent'); ?></span></h2>
 								<div class="inside">
 										<input class="large-text" type="text" readonly value='[adventcalendar calendar="<?php echo $calendar->getSlug(); ?>"]'>
 								</div><!-- .inside -->
@@ -49,7 +49,7 @@
 
 						<div class="meta-box-sortables ui-sortable">
 							<div class="postbox">
-								<h2><span><?php _e("Calendar cover image",$plugin_name); ?></span></h2>
+								<h2><span><?php _e("Calendar cover image",'wp-advent'); ?></span></h2>
 								<div class="inside">
 									<?php $image = $calendar->getImage(); ?>
 									<?php if($image): ?>
@@ -60,7 +60,7 @@
 												id="wp_advent_plugin_add_image_<?php echo $calendar->getId(); ?>"
 												data-calendar="<?php echo $calendar->getId(); ?>"
 												class="button wp_advent_plugin_add_image jsonly">
-											<?php echo __('Choose other image',$plugin_name); ?>
+											<?php echo __('Choose other image','wp-advent'); ?>
 										</button>
 									</p>
 								</div><!-- .inside -->
@@ -73,7 +73,7 @@
 					<div id="postbox-container-1" class="postbox-container">
 						<div class="meta-box-sortables">
 							<div class="postbox">
-								<h2><span><?php _e("Manage calendar",$plugin_name); ?></span></h2>
+								<h2><span><?php _e("Manage calendar",'wp-advent'); ?></span></h2>
 								<div class="inside">
 									<table class="wp-advent-admin-calendar">
 										<?php
@@ -106,7 +106,7 @@
 									<input type="hidden" name="ap_form" value="randomize" />
 									<input type="hidden" name="calendar" value="<?php echo $calendar->getId(); ?>" />
 									<?php wp_nonce_field( 'randomize_wp_advent_plugin_calendar' ); ?>
-									<?php submit_button(__('Randomize days',$plugin_name),'randomize'); ?>
+									<?php submit_button(__('Randomize days','wp-advent'),'randomize'); ?>
 								</form>
 							</div><!-- .meta-box-sortables -->
 						<?php endif; ?>
@@ -127,7 +127,7 @@
 		</div>
 	<?php endif; ?>
 	<?php if($no_calender_sheet_query->post_count > 0): ?>
-	<h3><?php _e('Sheets that somehow got lost',$plugin_name); ?></h3>
+	<h3><?php _e('Sheets that somehow got lost','wp-advent'); ?></h3>
 	<?php
 		while ( $no_calender_sheet_query->have_posts() ) {
 			$no_calender_sheet_query->the_post();

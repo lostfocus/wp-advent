@@ -2,8 +2,8 @@
 Contributors: schneyra, dominik.schwind
 Tags: christmas, december
 Requires at least: 4
-Tested up to: 4.4
-Stable tag: 1.2.1
+Tested up to: 4.7
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,10 +16,17 @@ It is using shortcodes, so it is possible to add the calendar to a regular post,
 
 Multiple calendars and calendar years are supported.
 
+We have a public git repository at [https://github.com/lostfocus/wp-advent](https://github.com/lostfocus/wp-advent) and we're happy to answer to questions here and there.
+Pull requests are obviously also very welcome.
+
 == Screenshots ==
 1. Backend
 
 == Changelog ==
+= 1.2.2 =
+Tested with WP 4.7.  
+Changed some code around to make it easier to translate this plugin. If you want to help doing that for your language, get in touch with us!
+
 = 1.2.1 =
 Bugfix.
 
@@ -44,3 +51,6 @@ Renamed to WP Advent
 
 = 0.1 =
 * Initial version
+
+== Installation ==
+Either install this plugin from within the WordPress administration screen or do it the old-fashioned way: download it, unzip it into the `plugins` folder.

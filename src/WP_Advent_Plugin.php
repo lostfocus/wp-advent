@@ -7,8 +7,8 @@ class WP_Advent_Plugin {
 
 	public function __construct() {
 
-		$this->plugin_name = 'wp-advent-plugin';
-		$this->version = '1.1.2';
+		$this->plugin_name = 'wp-advent';
+		$this->version = '1.2.2';
 
 		$this->options = get_option($this->plugin_name);
 
@@ -78,7 +78,7 @@ class WP_Advent_Plugin {
 		$this->loader = new WP_Advent_Plugin_Loader();
 	}
 	protected function _set_locale(){
-		$plugin_i18n = new WP_Advent_Plugin_i18n($this->plugin_name, $this->version, $this);
+		$plugin_i18n = new WP_Advent_Plugin_i18n('wp-advent', $this->version, $this);
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 	}

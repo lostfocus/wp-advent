@@ -4,7 +4,7 @@ class WP_Advent_Plugin_i18n {
 	private $version;
 	private $plugin;
 
-	public function __construct( $plugin_name, $version, $plugin ) {
+	public function __construct( $plugin_name = 'wp-advent', $version, $plugin ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;

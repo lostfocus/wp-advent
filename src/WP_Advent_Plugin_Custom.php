@@ -34,7 +34,7 @@ class WP_Advent_Plugin_Custom {
 
 		$args = array(
 			'labels'             => $labels,
-			'public'             => true,
+			'public'             => false,
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => false,

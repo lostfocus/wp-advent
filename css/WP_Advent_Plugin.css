@@ -7,52 +7,54 @@
     box-sizing: border-box;
 }
 
-#wp-advent-list {
+#wp-advent-wrapper::before {
+    padding-bottom: 100%;
+    display: block;
+    content: '';
+}
+
+#wp-advent-calendar {
     background-position: center center;
     background-size: cover;
     margin: 0 auto;
     max-width: 99.96%;
-    padding: 0;
     width: 99.96%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
-#wp-advent-list li {
-    display: inline-block;
-    float: left;
+#wp-advent-calendar li {
+    display: block;
     list-style: none;
     margin: 0;
     padding: 0;
     width: 16.66%;
+    height: 25%;
 }
 
-#wp-advent-list li a,
-#wp-advent-list li span {
+#wp-advent-calendar li a,
+#wp-advent-calendar li span {
     border: 0;
     color: #fff;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.3em;
-    padding: 2em 0;
-    height: 100%;
-    line-height: 3em;
     text-decoration: none;
-    text-align: center;
-
-    -webkit-transition: all 0.3s linear; /* Firefox */
-    -moz-transition: all 0.3s linear; /* WebKit */
-    -o-transition: all 0.3s linear; /* Opera */
-    transition: all 0.3s linear; /* Standard */
+    transition: background 0.3s linear, text-shadow 0.3s linear;
+    height: 100%;
+    box-shadow: none;
 }
 
-#wp-advent-list li span { background: rgba(255, 255, 255, .9); }
+#wp-advent-calendar li span { background: rgba(255, 255, 255, 0.9); }
 
-#wp-advent-list a:hover { background: rgba(255, 255, 255, .5); }
+#wp-advent-calendar li a { text-shadow: 0 0 5px #000; }
 
-#wp-advent-list a:active { top: 0; }
+#wp-advent-calendar li a:hover { background: rgba(255, 255, 255, 0.5); }
 
-.wp-advent-cf:after {
-    content: ".";
-    clear: both;
-    display: block;
-    visibility: hidden;
-    height: 0;
-}
+#wp-advent-calendar li a:active { top: 0; }

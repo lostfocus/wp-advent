@@ -14,9 +14,9 @@ class WP_Advent_Plugin_Shortcode {
 
 	public function enqueue_scripts() {
 		wp_enqueue_style($this->plugin_name, plugin_dir_url( dirname( __FILE__ )) . 'css/WP_Advent_Plugin.css', false, $this->version, false);
-		wp_enqueue_style('colorbox', plugin_dir_url( dirname( __FILE__ )) . 'css/colorbox.css', false, $this->version, false);
-		wp_enqueue_script($this->plugin_name, plugin_dir_url( dirname( __FILE__ )) . 'js/WP_Advent_Plugin.js', array( 'jquery' ), null, true);
-		wp_enqueue_script('colorbox', plugin_dir_url( dirname( __FILE__ )) . 'js/jquery.colorbox-min.js', array( 'jquery' ), null, true);
+		wp_enqueue_style('lightbox', plugin_dir_url( dirname( __FILE__ )) . 'css/glightbox.min.css', false, $this->version, false);
+		wp_enqueue_script($this->plugin_name, plugin_dir_url( dirname( __FILE__ )) . 'js/WP_Advent_Plugin.js', array( 'lightbox' ), null, true);
+		wp_enqueue_script('lightbox', plugin_dir_url( dirname( __FILE__ )) . 'js/glightbox.min.js', null, null, true);
 	}
 
 	public function wp_advent_custom_template($single_template) {

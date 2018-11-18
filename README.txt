@@ -1,9 +1,10 @@
 === WP Advent ===
 Contributors: schneyra, dominik.schwind
-Tags: christmas, december
+Tags: christmas, december, advent calendar, adventskalender, julekalender, julkalender
+Requires PHP: 5.4
 Requires at least: 4
-Tested up to: 4.7
-Stable tag: 1.2.3
+Tested up to: 4.9.8
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +23,14 @@ Pull requests are obviously also very welcome.
 == Screenshots ==
 1. Backend
 
+== Upgrade Notice ==
+The plugin uses your theme CSS to style the entries now, so you might want to check for changes.
+
 == Changelog ==
+= 1.3 =
+Changed the lightbox script to [glightbox](https://github.com/mcstudios/glightbox)
+The plugin uses your theme CSS to style the entries now
+
 = 1.2.3 =
 Fixed a bug where calendar sheets appear erroneously in search results.
 

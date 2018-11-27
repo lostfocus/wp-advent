@@ -44,7 +44,7 @@ class WP_Advent_Plugin_Custom {
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','revisions' )
+			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','revisions', 'custom-fields' )
 		);
 
 		register_post_type( 'wp_advent_sheet', $args );

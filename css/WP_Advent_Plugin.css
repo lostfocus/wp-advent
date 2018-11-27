@@ -17,8 +17,8 @@
     background-position: center center;
     background-size: cover;
     margin: 0 auto;
-    max-width: 99.96%;
-    width: 99.96%;
+    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -26,6 +26,7 @@
     right: 0;
     left: 0;
     bottom: 0;
+    padding: 0;
 }
 
 #wp-advent-calendar li {
@@ -33,8 +34,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 16.66%;
+    min-width: 16.66%;
     height: 25%;
+    flex-grow: 1;
 }
 
 #wp-advent-calendar li a,

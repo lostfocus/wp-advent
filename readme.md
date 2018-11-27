@@ -4,7 +4,7 @@
 **Requires PHP:** 5.4  
 **Requires at least:** 4  
 **Tested up to:** 4.9.8  
-**Stable tag:** 1.3  
+**Stable tag:** 1.3.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -23,10 +23,13 @@ Pull requests are obviously also very welcome.
 
 
 ## Upgrade Notice 
-The plugin uses your theme CSS to style the entries now, so you might want to check for changes.
+Fixed some smaller CSS issues.
 
 
 ## Changelog 
+
+### 1.3.1
+Fixed some smaller CSS issues.
 
 ### 1.3 
 Changed the lightbox script to [glightbox](https://github.com/mcstudios/glightbox)

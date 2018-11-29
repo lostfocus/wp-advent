@@ -8,7 +8,7 @@ class WP_Advent_Plugin {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-advent';
-		$this->version = '1.2.3';
+		$this->version = '1.3.2';
 
 		$this->options = get_option($this->plugin_name);
 

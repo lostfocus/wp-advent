@@ -24,9 +24,12 @@ Pull requests are obviously also very welcome.
 1. Backend
 
 == Upgrade Notice ==
-Fixed some smaller CSS issues.
+We're now loading all theme CSS files and add a few more classes to style the calendar.
 
 == Changelog ==
+= 1.3.2 =
+We're now loading all theme CSS files and add a few more classes to style the calendar.
+
 = 1.3.1 =
 Fixed some smaller CSS issues.
 

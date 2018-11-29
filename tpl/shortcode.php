@@ -7,7 +7,7 @@ if ( $image ) {
 $order = $calendar->getOrder();
 ?>
 
-<div id="wp-advent-wrapper">
+<div id="wp-advent-wrapper" class="year-<?php echo $calendar->getYear(); ?> calendar-<?php echo $calendar->getSlug(); ?>">
     <ul id="wp-advent-calendar" style="background-image: url(<?php echo $image_attributes[0]; ?>);">
 		<?php for ( $i = 0; $i <= 23; $i ++ ): ?>
 			<?php
@@ -40,7 +40,7 @@ $order = $calendar->getOrder();
                         </a>
                     </li>
 				<?php else : ?>
-                    <li><a href="<?php echo get_permalink( $day->ID ) ?>"
+                    <li class="day-<?php echo $day->ID; ?> status-<?php echo $day->post_status; ?>"><a href="<?php echo get_permalink( $day->ID ) ?>"
                            class="calendar-sheet js-calendar-sheet"><?php echo $daydate; ?></a></li>
 				<?php endif; ?>
 			<?php else: ?>
